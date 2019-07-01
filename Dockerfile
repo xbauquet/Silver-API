@@ -11,8 +11,9 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # http://dev.im-bot.com/docker-select-caching/
 ARG CACHEBUST=1
 
-COPY ./api/ /root/workdir/api/
-WORKDIR /root/workdir/api/
+WORKDIR /root/workdir/
+RUN git clone https://github.com/xbauquet/Silver-API.git
+WORKDIR /root/workdir/Silver-API/api/
 RUN ./gradlew clean shadowJar
 
 EXPOSE 4567
