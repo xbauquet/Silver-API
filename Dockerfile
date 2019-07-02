@@ -13,7 +13,7 @@ ARG CACHEBUST=1
 
 WORKDIR /root/workdir/
 RUN git clone https://github.com/xbauquet/Silver-API.git
-WORKDIR /root/workdir/Silver-API/api/
+WORKDIR /root/workdir/Silver-API/
 RUN ./gradlew clean shadowJar
 
 EXPOSE 4567
