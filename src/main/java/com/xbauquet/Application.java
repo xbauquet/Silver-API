@@ -12,14 +12,10 @@ public class Application {
     private final static String token = "222lsfhdsqlkfhidp4xfhm<kdsfhjm5464wfjs54dlf5dvg9kbbdhvhfdogfdjohkgjfgb543575xfvjhfwlgf2";
 
     public static void main(String[] args) {
-        path("/api", () -> {
-            before((request, response) -> securityCheck(request));
-
-            get("/hello", (request, response) -> {
-                // securityCheck(request);
-                return "Hello World";
-            });
-        });
+        path("/api", () -> get("/hello", (request, response) -> {
+            securityCheck(request);
+            return "Hello World";
+        }));
     }
 
     private static void securityCheck(final Request request) {
