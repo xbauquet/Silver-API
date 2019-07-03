@@ -17,7 +17,7 @@ public class Application {
         path("/api", () -> {
             get("/hello", (request, response) -> {
                 securityCheck(request);
-                return "Hello World v1.0.2";
+                return "Hello World v1.0.3";
             });
 
             get("/all", (request, response) -> {
